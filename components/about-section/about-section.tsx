@@ -13,9 +13,9 @@ const AboutSection = () => {
           height={448}
         />
         <div className="bg-white text-center mt-8">
-          <div className="text-3xl text-neutral-900 uppercase">
+          <h2 className="text-3xl text-neutral-900 uppercase">
             The leader in interactive VR
-          </div>
+          </h2>
           <div className="text-neutral-500 mt-4">
             Founded in 2011, Loopstudios has been producing world-class virtual
             reality projects for some of the best companies around the globe.

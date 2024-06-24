@@ -8,9 +8,9 @@ const HeroSection = () => {
       <MainHeader />
       <div className="absolute top-1/2 translate-y-[-50%] w-full">
         <HorizontalWrapper>
-          <div className="w-full border px-6 py-4 uppercase text-5xl">
+          <h1 className="w-full border px-6 py-4 uppercase text-5xl">
             Immersive experiences that deliver
-          </div>
+          </h1>
         </HorizontalWrapper>
       </div>
     </section>
