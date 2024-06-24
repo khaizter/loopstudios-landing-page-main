@@ -1,0 +1,20 @@
+import MainHeader from "@/components/main-header/main-header";
+import HorizontalWrapper from "@/components/wrapper/wrapper";
+import React from "react";
+
+const HeroSection = () => {
+  return (
+    <section className="bg-[url('/mobile/image-hero.jpg')] min-h-[668px] bg-cover bg-center relative">
+      <MainHeader />
+      <div className="absolute top-1/2 translate-y-[-50%] w-full">
+        <HorizontalWrapper>
+          <div className="w-full border px-6 py-4 uppercase text-5xl">
+            Immersive experiences that deliver
+          </div>
+        </HorizontalWrapper>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
