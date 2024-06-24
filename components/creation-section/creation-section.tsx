@@ -57,6 +57,9 @@ const CreationSection = () => {
             );
           })}
         </ul>
+        <button className="block mt-8 uppercase border border-black px-10 py-2 text-black mx-auto">
+          See all
+        </button>
       </HorizontalWrapper>
     </section>
   );
