@@ -47,7 +47,7 @@ const CreationSection = () => {
   return (
     <section className="py-20 bg-white">
       <HorizontalWrapper>
-        <h2 className="text-3xl text-neutral-900 uppercase text-center">
+        <h2 className="text-3xl text-neutral-950 uppercase text-center">
           Our creations
         </h2>
         <ul className="mt-10 space-y-6">
@@ -57,7 +57,7 @@ const CreationSection = () => {
             );
           })}
         </ul>
-        <button className="block mt-8 uppercase border border-black px-10 py-2 text-black mx-auto">
+        <button className="block mt-8 uppercase border border-black px-10 py-2 text-black mx-auto font-alata tracking-[.3em]">
           See all
         </button>
       </HorizontalWrapper>

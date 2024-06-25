@@ -7,7 +7,7 @@ const MainFooter = () => {
       <HorizontalWrapper className="flex flex-col items-center py-12">
         <Image src="/logo.svg" alt="logo" width="132" height="26" />
         <nav className="mt-8">
-          <ul className="space-y-4 text-center">
+          <ul className="space-y-4 text-center font-alata">
             <li>About</li>
             <li>Careers</li>
             <li>Events</li>
@@ -49,7 +49,7 @@ const MainFooter = () => {
             />
           </li>
         </ul>
-        <div className="mt-6 text-neutral-400">
+        <div className="mt-6 text-neutral-400 font-alata">
           © 2021 Loopstudios. All rights reserved.
         </div>
       </HorizontalWrapper>

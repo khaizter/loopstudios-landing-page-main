@@ -8,7 +8,7 @@ const HeroSection = () => {
       <MainHeader />
       <div className="absolute top-1/2 translate-y-[-50%] w-full">
         <HorizontalWrapper>
-          <h1 className="w-full border px-6 py-4 uppercase text-5xl">
+          <h1 className="w-full border px-6 py-6 text-4xl uppercase text-neutral-300 font-josefin-sans">
             Immersive experiences that deliver
           </h1>
         </HorizontalWrapper>

@@ -30,7 +30,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = (props) => {
           </header>
 
           <nav className="h-screen flex items-center">
-            <ul className="text-xl uppercase text-neutral-400 leading-loose">
+            <ul className="text-xl uppercase text-neutral-300 leading-loose font-josefin-sans">
               <li>About</li>
               <li>Careers</li>
               <li>Events</li>

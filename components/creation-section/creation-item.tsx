@@ -10,9 +10,9 @@ interface CreationItemProps {
 const CreationItem: React.FC<CreationItemProps> = (props) => {
   const { label, image } = props;
   return (
-    <li className="p-6 pt-10 bg-blue-300 relative text-xl text-neutral-200">
+    <li className="p-6 pt-10 bg-blue-300 relative text-xl text-neutral-50">
       <Image src={image} alt={label} fill />
-      <div className="relative z-10 uppercase max-w-24">{label}</div>
+      <div className="relative z-10 uppercase max-w-[6.5rem]">{label}</div>
     </li>
   );
 };
