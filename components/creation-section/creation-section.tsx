@@ -5,41 +5,50 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 type CreationItemType = {
   label: string;
-  image: string | StaticImport;
+  mobileImage: string | StaticImport;
+  desktopImage: string | StaticImport;
 };
 
 const creationItems: Array<CreationItemType> = [
   {
     label: "Deep earth",
-    image: "/mobile/image-deep-earth.jpg",
+    mobileImage: "/mobile/image-deep-earth.jpg",
+    desktopImage: "/desktop/image-deep-earth.jpg",
   },
   {
     label: "Night arcade",
-    image: "/mobile/image-night-arcade.jpg",
+    mobileImage: "/mobile/image-night-arcade.jpg",
+    desktopImage: "/desktop/image-night-arcade.jpg",
   },
   {
     label: "Soccer team VR",
-    image: "/mobile/image-soccer-team.jpg",
+    mobileImage: "/mobile/image-soccer-team.jpg",
+    desktopImage: "/desktop/image-soccer-team.jpg",
   },
   {
     label: "The Grid",
-    image: "/mobile/image-grid.jpg",
+    mobileImage: "/mobile/image-grid.jpg",
+    desktopImage: "/desktop/image-grid.jpg",
   },
   {
     label: "From up above VR",
-    image: "/mobile/image-from-above.jpg",
+    mobileImage: "/mobile/image-from-above.jpg",
+    desktopImage: "/desktop/image-from-above.jpg",
   },
   {
     label: "Pocket borealis",
-    image: "/mobile/image-pocket-borealis.jpg",
+    mobileImage: "/mobile/image-pocket-borealis.jpg",
+    desktopImage: "/desktop/image-pocket-borealis.jpg",
   },
   {
     label: "The curiosity",
-    image: "/mobile/image-curiosity.jpg",
+    mobileImage: "/mobile/image-curiosity.jpg",
+    desktopImage: "/desktop/image-curiosity.jpg",
   },
   {
     label: "Make it fisheye",
-    image: "/mobile/image-fisheye.jpg",
+    mobileImage: "/mobile/image-fisheye.jpg",
+    desktopImage: "/desktop/image-fisheye.jpg",
   },
 ];
 
@@ -47,17 +56,27 @@ const CreationSection = () => {
   return (
     <section className="py-20 bg-white">
       <HorizontalWrapper>
-        <h2 className="text-3xl text-neutral-950 uppercase text-center">
-          Our creations
-        </h2>
-        <ul className="mt-10 space-y-6">
+        <div className="block md:flex items-center justify-between">
+          <h2 className="text-3xl text-neutral-950 uppercase text-center">
+            Our creations
+          </h2>
+          <button className="hidden md:block uppercase border border-black px-10 py-2 text-black font-alata tracking-[.3em]">
+            See all
+          </button>
+        </div>
+        <ul className="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {creationItems.map((item: CreationItemType, index: number) => {
             return (
-              <CreationItem key={index} label={item.label} image={item.image} />
+              <CreationItem
+                key={index}
+                label={item.label}
+                mobileImage={item.mobileImage}
+                desktopImage={item.desktopImage}
+              />
             );
           })}
         </ul>
-        <button className="block mt-8 uppercase border border-black px-10 py-2 text-black mx-auto font-alata tracking-[.3em]">
+        <button className="block md:hidden mt-8 uppercase border border-black px-10 py-2 text-black mx-auto font-alata tracking-[.3em]">
           See all
         </button>
       </HorizontalWrapper>
