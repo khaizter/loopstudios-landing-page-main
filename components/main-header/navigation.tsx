@@ -8,14 +8,17 @@ const MainNavigation = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   return (
     <nav className="flex">
-      {/* <ul className="flex">
+      <ul className="hidden md:flex space-x-6 font-alata">
         <li>About</li>
         <li>Careers</li>
         <li>Events</li>
         <li>Products</li>
         <li>Support</li>
-      </ul> */}
-      <button onClick={() => setMenuOpen(true)} className="w-[26px] h-[26px]">
+      </ul>
+      <button
+        onClick={() => setMenuOpen(true)}
+        className="w-[26px] h-[26px] md:hidden"
+      >
         <Image
           src="/icon-hamburger.svg"
           alt="hamburger-button"

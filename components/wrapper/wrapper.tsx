@@ -8,7 +8,11 @@ interface HorizontalWrapperProps {
 const HorizontalWrapper: React.FC<HorizontalWrapperProps> = (props) => {
   const { children, className } = props;
 
-  return <div className={`px-6 ` + className}>{children}</div>;
+  return (
+    <div className={`px-6 md:max-w-5xl md:mx-auto xl:px-0 ${className}`}>
+      {children}
+    </div>
+  );
 };
 
 export default HorizontalWrapper;
