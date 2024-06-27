@@ -60,7 +60,7 @@ const CreationSection = () => {
           <h2 className="text-3xl text-neutral-950 uppercase text-center">
             Our creations
           </h2>
-          <button className="hidden md:block uppercase border border-black px-10 py-2 text-black font-alata tracking-[.3em]">
+          <button className="hidden md:block uppercase border border-black px-10 py-2 text-black font-alata tracking-[.3em] hover:text-white hover:bg-black">
             See all
           </button>
         </div>
@@ -76,7 +76,7 @@ const CreationSection = () => {
             );
           })}
         </ul>
-        <button className="block md:hidden mt-8 uppercase border border-black px-10 py-2 text-black mx-auto font-alata tracking-[.3em]">
+        <button className="block md:hidden mt-8 uppercase border border-black px-10 py-2 text-black mx-auto font-alata tracking-[.3em]  hover:text-white hover:bg-black">
           See all
         </button>
       </HorizontalWrapper>

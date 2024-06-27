@@ -3,13 +3,19 @@ import ReactDom from "react-dom";
 import Image from "next/image";
 import HorizontalWrapper from "@/components/wrapper/wrapper";
 
+type NavigationItemType = {
+  label: string;
+  path: string;
+};
+
 interface MenuOverlayProps {
   open: boolean;
   onClose: () => void;
+  navigationItems: Array<NavigationItemType>;
 }
 
 const MenuOverlay: React.FC<MenuOverlayProps> = (props) => {
-  const { open, onClose } = props;
+  const { open, onClose, navigationItems } = props;
 
   if (!open) return null;
 
@@ -31,11 +37,16 @@ const MenuOverlay: React.FC<MenuOverlayProps> = (props) => {
 
           <nav className="h-screen flex items-center">
             <ul className="text-xl uppercase text-neutral-300 leading-loose font-josefin-sans">
-              <li>About</li>
-              <li>Careers</li>
-              <li>Events</li>
-              <li>Products</li>
-              <li>Support</li>
+              {navigationItems.map((item: NavigationItemType, index) => {
+                return (
+                  <li
+                    key={index}
+                    className="relative pr-4 hover:text-neutral-400"
+                  >
+                    {item.label}
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </HorizontalWrapper>
