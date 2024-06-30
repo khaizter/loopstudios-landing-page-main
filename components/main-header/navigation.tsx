@@ -87,11 +87,13 @@ const MainNavigation = () => {
           height="26"
         />
       </motion.button>
-      <MenuOverlay
-        open={menuOpen}
-        onClose={() => setMenuOpen(false)}
-        navigationItems={navigationItems}
-      />
+      {true && (
+        <MenuOverlay
+          open={menuOpen}
+          onClose={() => setMenuOpen(false)}
+          navigationItems={navigationItems}
+        />
+      )}
     </nav>
   );
 };
