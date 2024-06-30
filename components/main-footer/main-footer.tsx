@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import HorizontalWrapper from "@/components/wrapper/wrapper";
+import { motion } from "framer-motion";
 
 type NavigationItemType = {
   label: string;
@@ -64,12 +67,29 @@ const MainFooter = () => {
             <ul className="lg:flex items-center space-y-4 lg:space-y-0 lg:space-x-4 text-center font-alata">
               {navigationItems.map((item: NavigationItemType, index) => {
                 return (
-                  <li
+                  <motion.li
+                    initial="hidden"
+                    whileHover="visible"
+                    variants={{
+                      hidden: {},
+                      visible: {},
+                    }}
                     key={index}
-                    className="relative hover:after:absolute hover:after:-bottom-2 hover:after:left-1/2 hover:after:translate-x-[-50%] hover:after:h-0.5 hover:after:w-6 hover:after:bg-white"
+                    className="relative"
                   >
-                    {item.label}
-                  </li>
+                    <span>{item.label}</span>
+                    <motion.span
+                      variants={{
+                        hidden: {
+                          width: 0,
+                        },
+                        visible: {
+                          width: 30,
+                        },
+                      }}
+                      className="absolute -bottom-2 left-1/2 translate-x-[-50%] h-0.5 bg-white"
+                    ></motion.span>
+                  </motion.li>
                 );
               })}
             </ul>
@@ -79,7 +99,13 @@ const MainFooter = () => {
           <ul className="flex items-center space-x-4 mt-8 lg:mt-0">
             {socials.map((item: SocialType, index: number) => {
               return (
-                <li
+                <motion.li
+                  initial="hidden"
+                  whileHover="visible"
+                  variants={{
+                    hidden: {},
+                    visible: {},
+                  }}
                   key={index}
                   className="relative hover:after:absolute hover:after:-bottom-2 hover:after:left-1/2 hover:after:translate-x-[-50%] hover:after:h-0.5 hover:after:w-10/12 hover:after:bg-white"
                 >
@@ -89,7 +115,18 @@ const MainFooter = () => {
                     width="26"
                     height="26"
                   />
-                </li>
+                  <motion.span
+                    variants={{
+                      hidden: {
+                        width: 0,
+                      },
+                      visible: {
+                        width: "84%",
+                      },
+                    }}
+                    className="absolute -bottom-2 left-1/2 translate-x-[-50%] h-0.5 bg-white"
+                  ></motion.span>
+                </motion.li>
               );
             })}
           </ul>

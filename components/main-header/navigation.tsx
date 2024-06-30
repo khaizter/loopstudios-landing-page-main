@@ -3,6 +3,7 @@
 import MenuOverlay from "@/components/main-header/menu-overlay";
 import React, { useState } from "react";
 import Image from "next/image";
+import { Variants, motion } from "framer-motion";
 
 type NavigationItemType = {
   label: string;
@@ -39,16 +40,43 @@ const MainNavigation = () => {
       <ul className="hidden md:flex space-x-6 font-alata">
         {navigationItems.map((item: NavigationItemType, index) => {
           return (
-            <li
+            <motion.li
+              initial="hidden"
+              whileHover="visible"
+              variants={{
+                hidden: {},
+                visible: {},
+              }}
               key={index}
-              className="relative hover:after:absolute hover:after:-bottom-2 hover:after:left-1/2 hover:after:translate-x-[-50%] hover:after:h-0.5 hover:after:w-6 hover:after:bg-white"
+              className="relative"
             >
-              {item.label}
-            </li>
+              <span>{item.label}</span>
+              <motion.span
+                variants={{
+                  hidden: {
+                    width: 0,
+                  },
+                  visible: {
+                    width: 30,
+                  },
+                }}
+                className="absolute -bottom-2 left-1/2 translate-x-[-50%] h-0.5 bg-white"
+              ></motion.span>
+            </motion.li>
           );
         })}
       </ul>
-      <button
+      <motion.button
+        variants={{
+          initial: {
+            scale: 1,
+          },
+          hover: {
+            scale: 1.1,
+          },
+        }}
+        initial="initial"
+        whileHover="hover"
         onClick={() => setMenuOpen(true)}
         className="w-[26px] h-[26px] md:hidden"
       >
@@ -58,7 +86,7 @@ const MainNavigation = () => {
           width="26"
           height="26"
         />
-      </button>
+      </motion.button>
       <MenuOverlay
         open={menuOpen}
         onClose={() => setMenuOpen(false)}

@@ -1,7 +1,9 @@
+"use client";
 import CreationItem from "@/components/creation-section/creation-item";
 import HorizontalWrapper from "@/components/wrapper/wrapper";
 import React from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { Variants, motion } from "framer-motion";
 
 type CreationItemType = {
   label: string;
@@ -60,9 +62,23 @@ const CreationSection = () => {
           <h2 className="text-3xl text-neutral-950 uppercase text-center">
             Our creations
           </h2>
-          <button className="hidden md:block uppercase border border-black px-10 py-2 text-black font-alata tracking-[.3em] hover:text-white hover:bg-black">
+          <motion.button
+            variants={{
+              initial: {
+                color: "rgb(0,0,0)",
+                background: "rgb(255,255,255)",
+              },
+              hover: {
+                color: "rgb(255,255,255)",
+                background: "rgb(0,0,0)",
+              },
+            }}
+            initial="initial"
+            whileHover="hover"
+            className="hidden md:block uppercase border border-black px-10 py-2  font-alata tracking-[.3em]"
+          >
             See all
-          </button>
+          </motion.button>
         </div>
         <ul className="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {creationItems.map((item: CreationItemType, index: number) => {
@@ -76,9 +92,23 @@ const CreationSection = () => {
             );
           })}
         </ul>
-        <button className="block md:hidden mt-8 uppercase border border-black px-10 py-2 text-black mx-auto font-alata tracking-[.3em]  hover:text-white hover:bg-black">
+        <motion.button
+          variants={{
+            initial: {
+              color: "rgb(0,0,0)",
+              background: "rgb(255,255,255)",
+            },
+            hover: {
+              color: "rgb(255,255,255)",
+              background: "rgb(0,0,0)",
+            },
+          }}
+          initial="initial"
+          whileHover="hover"
+          className="block md:hidden mt-8 uppercase border border-black px-10 py-2 mx-auto font-alata tracking-[.3em]"
+        >
           See all
-        </button>
+        </motion.button>
       </HorizontalWrapper>
     </section>
   );
